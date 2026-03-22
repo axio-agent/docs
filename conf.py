@@ -22,6 +22,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "furo"
 html_title = "Axio"
+html_logo = "_static/logo.svg"
 html_theme_options = {
     "source_repository": "https://github.com/axio-agent/docs",
     "source_branch": "main",
