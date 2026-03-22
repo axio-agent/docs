@@ -46,6 +46,90 @@ Overview of every package in the monorepo and their entry points.
 
 ::::
 
+## How to draw an owl
+
+::::{grid} 1 1 2 2
+:gutter: 2
+:class-row: owl-row
+
+:::{grid-item}
+:columns: 12 12 2 2
+:class: owl-caption
+
+```{image} _static/axio-circles.svg
+:alt: Step 1
+:width: 80px
+:align: center
+```
+
+**Step 1.**
+:::
+
+:::{grid-item}
+:columns: 12 12 10 10
+
+```python
+import aiohttp
+from axio import Tool, ToolHandler
+
+class Fetch(ToolHandler):
+    """Fetch the text content of a URL."""
+    url: str
+
+    async def __call__(self) -> str:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(self.url) as r:
+                return (await r.text())[:2000]
+
+fetch = Tool(name="fetch", description=Fetch.__doc__, handler=Fetch)
+```
+:::
+
+::::
+
+::::{grid} 1 1 2 2
+:gutter: 2
+:class-row: owl-row
+
+:::{grid-item}
+:columns: 12 12 2 2
+:class: owl-caption
+
+```{image} _static/logo.svg
+:alt: Step 2
+:width: 80px
+:align: center
+```
+
+**Step 2.**
+:::
+
+:::{grid-item}
+:columns: 12 12 10 10
+
+```python
+import asyncio
+from axio import Agent, MemoryContextStore
+from axio_transport_openai import OpenAITransport
+
+async def main() -> None:
+    agent = Agent(
+        system="You are a helpful assistant.",
+        tools=[fetch],
+        transport=OpenAITransport(),
+    )
+    reply = await agent.run(
+        "What's the weather in Moscow right now? Use wttr.in",
+        MemoryContextStore(),
+    )
+    print(reply)
+
+asyncio.run(main())
+```
+:::
+
+::::
+
 ## Why Axio?
 
 Extensible by design

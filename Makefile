@@ -1,4 +1,4 @@
-.PHONY: html clean
+.PHONY: html clean cf-inspect cf-setup deploy
 
 SPHINXBUILD ?= uv run --group docs sphinx-build
 SOURCEDIR = .
@@ -9,3 +9,12 @@ html:
 
 clean:
 	rm -rf $(BUILDDIR)
+
+cf-inspect:
+	bash scripts/cf-inspect.sh
+
+cf-setup:
+	bash scripts/cf-setup.sh
+
+deploy: html
+	bash scripts/deploy.sh
