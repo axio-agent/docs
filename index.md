@@ -4,7 +4,8 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/axio-agent/axio/blob/master/LICENSE)
 [![Python](https://img.shields.io/badge/python-3.12%2B-blue?logo=python&logoColor=white)](https://python.org)
 [![Docs](https://img.shields.io/github/actions/workflow/status/axio-agent/docs/docs.yml?label=docs&logo=readthedocs&logoColor=white)](https://github.com/axio-agent/docs/actions)
-[![PyPI](https://img.shields.io/pypi/v/axio?logo=pypi&logoColor=white)](https://pypi.org/project/axio/)
+[![PyPI axio](https://img.shields.io/pypi/v/axio?label=axio&logo=pypi&logoColor=white)](https://pypi.org/project/axio/)
+[![PyPI axio-tui](https://img.shields.io/pypi/v/axio-tui?label=axio-tui&logo=pypi&logoColor=white)](https://pypi.org/project/axio-tui/)
 
 **A highly extensible, streaming-first agent framework for Python.**
 
