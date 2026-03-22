@@ -5,8 +5,8 @@
 Axio is distributed as a uv workspace. Clone the repository and sync dependencies:
 
 ```bash
-git clone https://github.com/axio-framework/axon.git
-cd axon
+git clone https://github.com/axio-agent/axio.git
+cd axio
 uv sync
 ```
 

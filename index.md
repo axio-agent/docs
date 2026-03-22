@@ -1,5 +1,11 @@
 # Axio
 
+[![GitHub org](https://img.shields.io/badge/github-axio--agent-181717?logo=github&logoColor=white)](https://github.com/axio-agent)
+[![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/axio-agent/axio/blob/master/LICENSE)
+[![Python](https://img.shields.io/badge/python-3.12%2B-blue?logo=python&logoColor=white)](https://python.org)
+[![Docs](https://img.shields.io/github/actions/workflow/status/axio-agent/docs/docs.yml?label=docs&logo=readthedocs&logoColor=white)](https://github.com/axio-agent/docs/actions)
+[![PyPI](https://img.shields.io/pypi/v/axio?logo=pypi&logoColor=white)](https://pypi.org/project/axio/)
+
 **A highly extensible, streaming-first agent framework for Python.**
 
 Axio gives you a minimal but complete foundation for building LLM-powered agents.
@@ -119,7 +125,7 @@ async def main() -> None:
         transport=OpenAITransport(),
     )
     reply = await agent.run(
-        "What's the weather in Moscow right now? Use wttr.in",
+        "What's the weather tomorrow? Use geoip for detect my location and wttr.in for weather.",
         MemoryContextStore(),
     )
     print(reply)
